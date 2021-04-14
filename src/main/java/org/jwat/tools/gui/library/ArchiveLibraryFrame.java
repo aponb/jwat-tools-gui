@@ -31,6 +31,8 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -39,8 +41,8 @@ import org.jwat.tools.gui.Indexer;
 import org.jwat.tools.gui.explorer.ArchiveEntry;
 import org.jwat.tools.gui.lister.ArchiveLister;
 
-import com.antiaction.bittorrent.client.ui.JProgressBarTableCellRenderer;
-import com.antiaction.bittorrent.client.ui.JTextFieldValidFile;
+//import com.antiaction.bittorrent.client.ui.JProgressBarTableCellRenderer;
+//import com.antiaction.bittorrent.client.ui.JTextFieldValidFile;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
@@ -65,7 +67,8 @@ public class ArchiveLibraryFrame extends JInternalFrame implements ActionListene
 	private final EmptyBorder border5 = new EmptyBorder( 5, 5, 5, 5 );
 
 	private final JLabel labelSource = new JLabel( "Source:" );
-	private final JTextField tfSource = new JTextFieldValidFile( 24 );
+//	private final JTextField tfSource = new JTextFieldValidFile( 24 );
+    private final JTextField tfSource = new JTextField( 24 );
 	private final JButton buttonSelectSource = new JButton( "..." );
 	private final JButton buttonAdd = new JButton( "Add" );
 
@@ -150,7 +153,8 @@ public class ArchiveLibraryFrame extends JInternalFrame implements ActionListene
 
 		table.setSelectionMode( ListSelectionModel.SINGLE_SELECTION );
 
-		table.getColumn( "Progress" ).setCellRenderer( new JProgressBarTableCellRenderer() );
+//		table.getColumn( "Progress" ).setCellRenderer( new JProgressBarTableCellRenderer() );
+        table.getColumn( "Progress" ).setCellRenderer( new DefaultTableCellRenderer() );
 
 		TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(table.getModel());
 		table.setRowSorter(sorter);

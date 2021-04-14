@@ -3,12 +3,6 @@
 	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
-
   <groupId>org.jwat</groupId>
   <artifactId>jwat-tools-gui</artifactId>
   <version>0.3.0-SNAPSHOT</version>
@@ -61,7 +55,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jwat.version>1.1.1</jwat.version>
-    <jwat.tools.version>0.6.7</jwat.tools.version>
+    <jwat.tools.version>0.6.5</jwat.tools.version>
     <assembly.home.env.name>JWATTTOOLSGUI_HOME</assembly.home.env.name>
     <assembly.home.env.name.ref>${JWATTTOOLSGUI_HOME}</assembly.home.env.name.ref>
     <assembly.main.class.name>org.jwat.tools.gui.Desktop</assembly.main.class.name>
@@ -88,6 +82,11 @@
       <artifactId>jwat-warc</artifactId>
       <version>${jwat.version}</version>
     </dependency>
+	<dependency>
+	    <groupId>org.jwat</groupId>
+	    <artifactId>jwat-archive</artifactId>
+	    <version>${jwat.version}</version>
+	</dependency>
     <dependency>
       <groupId>org.jwat</groupId>
       <artifactId>jwat-tools</artifactId>
@@ -109,20 +108,11 @@
       <version>2.5.2</version>
       <type>pom</type>
     </dependency>
-    <dependency>
-      <groupId>com.antiaction</groupId>
-      <artifactId>commons-debug</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>${basedir}/lib/antiaction-commons-debug.jar</systemPath>
-    </dependency> 
-    <dependency>
-      <groupId>com.antiaction</groupId>
-      <artifactId>bittorrent-client</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>${basedir}/lib/bittorrent-client.jar</systemPath>
-    </dependency> 
+	<dependency>
+	    <groupId>com.antiaction</groupId>
+	    <artifactId>common-cli</artifactId>
+	    <version>0.2.0</version>
+	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -142,8 +132,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
 
